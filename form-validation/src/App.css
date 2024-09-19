@@ -1,0 +1,145 @@
+/* Main container styling */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 80vh; 
+  padding: 20px;
+  box-sizing: border-box; 
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 450px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.floating-label {
+  position: relative;
+}
+
+.floating-label input {
+  width: 100%;
+  padding: 12px 0px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #333;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+}
+
+/* Error styling inside input box */
+.floating-label .error-message {
+  color: red;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -15px; /* Moves error message inside input box */
+  left: 10px;
+  visibility: visible;
+}
+
+.floating-label input.input-error {
+  border-color: red;
+}
+
+
+.floating-label label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 10px;
+  font-size: 0.8rem;
+  color: #007bff;
+  background-color: #f9f9f9;
+  padding: 0 5px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled{
+  opacity: 0.35;
+}
+
+
+
+.image-container {
+  width: 450px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+@media screen and (max-width: 899px) {
+  .image-container{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 449px) {
+  .image-container{
+    display: none;
+  }
+  .form{
+    width: 300px;
+  }
+}
